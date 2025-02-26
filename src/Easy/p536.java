@@ -12,51 +12,55 @@ public class p536 {
 		
 		while (line != null) {
 			int nTerrenos = Integer.parseInt(line);
-			String dTerrenos[][] = new String[nTerrenos][];
+			String dTerrenos[][] = new String[nTerrenos][5];
 
 			for (int i = 0; i < nTerrenos; i++) {
-				for (int j = 0; j < dTerrenos.length; j++) {
-					line = br.readLine();
+				line = br.readLine();
+				if (line != null) {
 					String dades[] = line.split(" ");
 					dTerrenos[i] = dades;
 				}
 				
 				String resultat = dTerrenos[0][4];
 				
-				if (Integer.parseInt(dTerrenos[0][0]) > Integer.parseInt(dTerrenos[1][0])){
+				if(nTerrenos < 2) {
 					resultat = dTerrenos[0][4];
 				}
-				else if (Integer.parseInt(dTerrenos[0][0]) < Integer.parseInt(dTerrenos[1][0])){
-					resultat = dTerrenos[1][4];
-				}
 				else {
-					if (Integer.parseInt(dTerrenos[0][2]) < Integer.parseInt(dTerrenos[1][2])){
+					if (Integer.parseInt(dTerrenos[0][0]) > Integer.parseInt(dTerrenos[1][0])){
 						resultat = dTerrenos[0][4];
 					}
-					else if (Integer.parseInt(dTerrenos[0][2]) > Integer.parseInt(dTerrenos[1][2])){
+					else if (Integer.parseInt(dTerrenos[0][0]) < Integer.parseInt(dTerrenos[1][0])){
 						resultat = dTerrenos[1][4];
 					}
 					else {
-						if (Integer.parseInt(dTerrenos[0][4]) < Integer.parseInt(dTerrenos[1][3])){
+						if (Integer.parseInt(dTerrenos[0][2]) < Integer.parseInt(dTerrenos[1][2])){
 							resultat = dTerrenos[0][4];
 						}
-						else if (Integer.parseInt(dTerrenos[0][3]) < Integer.parseInt(dTerrenos[1][3])) {
+						else if (Integer.parseInt(dTerrenos[0][2]) > Integer.parseInt(dTerrenos[1][2])){
 							resultat = dTerrenos[1][4];
 						}
 						else {
-							if (Integer.parseInt(dTerrenos[0][1]) < Integer.parseInt(dTerrenos[1][1])) {
+							if (Integer.parseInt(dTerrenos[0][3]) < Integer.parseInt(dTerrenos[1][3])){
 								resultat = dTerrenos[0][4];
 							}
-							else if (Integer.parseInt(dTerrenos[0][1]) > Integer.parseInt(dTerrenos[1][1])) {
+							else if (Integer.parseInt(dTerrenos[0][3]) < Integer.parseInt(dTerrenos[1][3])) {
 								resultat = dTerrenos[1][4];
+							}
+							else {
+								if (Integer.parseInt(dTerrenos[0][1]) < Integer.parseInt(dTerrenos[1][1])) {
+									resultat = dTerrenos[0][4];
+								}
+								else if (Integer.parseInt(dTerrenos[0][1]) > Integer.parseInt(dTerrenos[1][1])) {
+									resultat = dTerrenos[1][4];
+								}
 							}
 						}
 					}
 				}
 				System.out.println(resultat);
+				line = br.readLine();
 			}
-
-			line = br.readLine();
 		}
 	}
 }

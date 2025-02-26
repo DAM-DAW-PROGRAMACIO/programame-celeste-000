@@ -18,7 +18,13 @@ public class p456 {
 			for (int j = 0; j < dades.length; j++) {
 				quadrats[j] = Integer.parseInt(dades[j]);
 			}
-			int minTab = quadrats[2] / (quadrats[0] * quadrats[1]) + 1;
+			int minTab;
+			if (quadrats[2] % (quadrats[0] * quadrats[1]) == 0) {
+				minTab = quadrats[2] / (quadrats[0] * quadrats[1]);
+			}
+			else {
+				minTab = quadrats[2] / (quadrats[0] * quadrats[1]) + 1;
+			}
 			System.out.println(minTab);
 		}
 	}

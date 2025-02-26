@@ -16,8 +16,13 @@ public class p407 {
 			for (int i = 0; i < entrada.length; i++) {
 				dades[i] = Integer.parseInt(entrada[i]);
 			}
-			int casellesXArribar = dades[0] - dades[1];
-			int casellaFinal = dades[0] - (dades[2] - casellesXArribar);
+			int casellaFinal;
+			if (dades[2] < dades[0] - dades[1]) {
+				casellaFinal = dades[1] + dades[2];
+			}
+			else {
+				casellaFinal = dades[0] - (dades[2] - (dades[0] - dades[1]));
+			}
 			System.out.println(casellaFinal);
 					
 			line = br.readLine();

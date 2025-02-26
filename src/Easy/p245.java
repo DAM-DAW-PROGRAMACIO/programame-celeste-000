@@ -20,13 +20,21 @@ public class p245 {
 			}
 			boolean creixent = true;
 			for (int i = 0; i < nPersones - 1; i++) {
-				if (altures[i] >= altures[i + 1]) {
-					creixent = false;
-					break;
+				if (nPersones >= 2) {
+					if (altures[i] >= altures[i + 1]) {
+						creixent = false;
+					}
 				}
 			}
-			
-			if (creixent)
+			boolean decreixent = true;
+			for (int i = 0; i < nPersones - 1; i++) {
+				if (nPersones >= 2) {
+					if (altures[i] <= altures[i + 1]) {
+						decreixent = false;
+					}
+				}
+			}
+			if (creixent || decreixent)
 				System.out.println("DALTON");
 			else
 				System.out.println("DESCONOCIDOS");

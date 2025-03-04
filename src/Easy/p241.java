@@ -15,11 +15,8 @@ public class p241 {
 			line = br.readLine();
 			int hojas = Integer.parseInt(line);
 			
-			if (hojas < 3) {
+			if (hojas <= 5) {
 				System.out.println("IMPOSIBLE");
-			}
-			else {
-				System.out.println(hojas / 4);
 			}
 		}
 	}

@@ -1,66 +1,48 @@
 package Easy;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class p536 {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
-		String line = br.readLine();
-		
+		Scanner sc = new Scanner(System.in);
+		String line = sc.nextLine();
 		while (line != null) {
 			int nTerrenos = Integer.parseInt(line);
-			String dTerrenos[][] = new String[nTerrenos][5];
-
+			
+			line = sc.nextLine();
+			String dadesInicials[] = line.split(" ", 5);
+			int millorTamany = Integer.parseInt(dadesInicials[0]);
+			int millorAbono = Integer.parseInt(dadesInicials[1]);
+			int millorAigua = Integer.parseInt(dadesInicials[2]);
+			int millorDistancia = Integer.parseInt(dadesInicials[3]);
+			String millorPropietari = dadesInicials[4];
+			
 			for (int i = 0; i < nTerrenos; i++) {
-				line = br.readLine();
-				if (line != null) {
-					String dades[] = line.split(" ");
-					dTerrenos[i] = dades;
-				}
+				line = sc.nextLine();
+				String dades[] = line.split(" ", 5);
+				int tamany = Integer.parseInt(dades[0]);
+				int abono = Integer.parseInt(dades[1]);
+				int aigua = Integer.parseInt(dades[2]);
+				int distancia = Integer.parseInt(dades[3]);
+				String propietari = dades[4];
 				
-				String resultat = dTerrenos[0][4];
-				
-				if(nTerrenos < 2) {
-					resultat = dTerrenos[0][4];
+				if (tamany > millorTamany || tamany == millorTamany && aigua < millorAigua ||
+						tamany == millorTamany && aigua == millorAigua && distancia < millorDistancia ||
+						tamany == millorTamany && aigua == millorAigua && distancia == millorDistancia && abono < millorAbono) {
+					
+					millorTamany = tamany;
+					millorAbono = abono;
+					millorAigua = aigua;
+					millorDistancia = distancia;
+					millorPropietari = propietari;
 				}
-				else {
-					if (Integer.parseInt(dTerrenos[0][0]) > Integer.parseInt(dTerrenos[1][0])){
-						resultat = dTerrenos[0][4];
-					}
-					else if (Integer.parseInt(dTerrenos[0][0]) < Integer.parseInt(dTerrenos[1][0])){
-						resultat = dTerrenos[1][4];
-					}
-					else {
-						if (Integer.parseInt(dTerrenos[0][2]) < Integer.parseInt(dTerrenos[1][2])){
-							resultat = dTerrenos[0][4];
-						}
-						else if (Integer.parseInt(dTerrenos[0][2]) > Integer.parseInt(dTerrenos[1][2])){
-							resultat = dTerrenos[1][4];
-						}
-						else {
-							if (Integer.parseInt(dTerrenos[0][3]) < Integer.parseInt(dTerrenos[1][3])){
-								resultat = dTerrenos[0][4];
-							}
-							else if (Integer.parseInt(dTerrenos[0][3]) < Integer.parseInt(dTerrenos[1][3])) {
-								resultat = dTerrenos[1][4];
-							}
-							else {
-								if (Integer.parseInt(dTerrenos[0][1]) < Integer.parseInt(dTerrenos[1][1])) {
-									resultat = dTerrenos[0][4];
-								}
-								else if (Integer.parseInt(dTerrenos[0][1]) > Integer.parseInt(dTerrenos[1][1])) {
-									resultat = dTerrenos[1][4];
-								}
-							}
-						}
-					}
-				}
-				System.out.println(resultat);
-				line = br.readLine();
 			}
+			System.out.println(millorPropietari);
+			
+			line = sc.next();
 		}
+		sc.close();
 	}
 }

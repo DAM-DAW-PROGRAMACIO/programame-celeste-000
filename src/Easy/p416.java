@@ -17,7 +17,7 @@ public class p416 {
 			HashSet<String> aniversaris = new HashSet<String>();
 			String diaIMes;
 			line = br.readLine();
-			String dates[] = line.split(line);
+			String dates[] = line.split(" ");
 			String dataSeparada[][] = new String[dates.length][3];
 			
 			for (int i = 0; i < dates.length; i++) {
@@ -26,7 +26,6 @@ public class p416 {
 			
 			for (int i = 0; i < dates.length; i++) {
 				for (int j = 0; j < 2; j++) {
-					diaIMes += dataSeparada[i][j];
 				}
 			}
 			

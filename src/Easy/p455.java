@@ -13,7 +13,6 @@ public class p455 {
 		
 		for (int i = 0; i < casos; i++) {
 			line = br.readLine();
-			int num = Integer.parseInt(line);
 		}
 	}
 }

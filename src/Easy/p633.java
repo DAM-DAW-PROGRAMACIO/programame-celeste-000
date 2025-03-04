@@ -1,6 +1,5 @@
 package Easy;
 
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class p633 {
@@ -17,5 +16,6 @@ public class p633 {
 			
 			line = sc.nextLine();
 		}
+		sc.close();
 	}
 }

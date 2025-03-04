@@ -1,33 +1,29 @@
 package Easy;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class p605 {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
-		String line = br.readLine();
+		Scanner sc = new Scanner(System.in);
+		String line = sc.next();
 		
 		while (!line.equals(".")) {
 			int verano = 0;
 			int invierno = 0;
-			String entrada[] = line.split(" ");
-			int i = 0;
 			
-			while (!entrada[i].equals(".")) {
-				if (entrada[i].equals("V")) {
+			while (true) {
+				if (line.equals("V")) {
 					verano++;
 				}
-				else if (entrada[i].equals("I")) {
+				else if (line.equals("I")) {
 					invierno++;
 				}
-				else if (entrada[i].equals("A")) {
-					verano++;
-					invierno++;
+				else if (line.equals(".")) {
+					break;
 				}
-				i++;
+				line = sc.next();
 			}
 			if (verano > invierno) {
 				System.out.println("VERANO");
@@ -38,7 +34,8 @@ public class p605 {
 			else {
 				System.out.println("EMPATE");
 			}
-			line = br.readLine();
+			line = sc.next();
 		}
+		sc.close();
 	}
 }

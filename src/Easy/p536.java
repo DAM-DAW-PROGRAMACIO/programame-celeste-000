@@ -7,26 +7,22 @@ public class p536 {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		String line = sc.nextLine();
-		while (line != null) {
+		while (sc.hasNextLine()) {
+			String line = sc.nextLine();
 			int nTerrenos = Integer.parseInt(line);
 			
-			line = sc.nextLine();
-			String dadesInicials[] = line.split(" ", 5);
-			int millorTamany = Integer.parseInt(dadesInicials[0]);
-			int millorAbono = Integer.parseInt(dadesInicials[1]);
-			int millorAigua = Integer.parseInt(dadesInicials[2]);
-			int millorDistancia = Integer.parseInt(dadesInicials[3]);
-			String millorPropietari = dadesInicials[4];
+			int millorTamany = sc.nextInt();
+			int millorAbono = sc.nextInt();
+			int millorAigua = sc.nextInt();
+			int millorDistancia = sc.nextInt();
+			String millorPropietari = sc.nextLine().trim();
 			
-			for (int i = 0; i < nTerrenos; i++) {
-				line = sc.nextLine();
-				String dades[] = line.split(" ", 5);
-				int tamany = Integer.parseInt(dades[0]);
-				int abono = Integer.parseInt(dades[1]);
-				int aigua = Integer.parseInt(dades[2]);
-				int distancia = Integer.parseInt(dades[3]);
-				String propietari = dades[4];
+			for (int i = 1; i < nTerrenos; i++) {
+				int tamany = sc.nextInt();
+				int abono = sc.nextInt();
+				int aigua = sc.nextInt();
+				int distancia = sc.nextInt();
+				String propietari = sc.nextLine().trim();
 				
 				if (tamany > millorTamany || tamany == millorTamany && aigua < millorAigua ||
 						tamany == millorTamany && aigua == millorAigua && distancia < millorDistancia ||
@@ -41,7 +37,6 @@ public class p536 {
 			}
 			System.out.println(millorPropietari);
 			
-			line = sc.next();
 		}
 		sc.close();
 	}

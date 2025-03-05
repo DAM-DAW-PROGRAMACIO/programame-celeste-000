@@ -1,8 +1,9 @@
 package Easy;
 
 import java.util.Scanner;
+import java.util.Stack;
 
-public class plantillaScanner {
+public class p141 {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
@@ -10,6 +11,8 @@ public class plantillaScanner {
 		String line = sc.nextLine();
 		
 		while (line != null) {
+			//Stack<Character> simbols = new Stack<Character>();
+			//push(); pop(); peek();
 			
 			line = sc.nextLine();
 		}

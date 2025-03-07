@@ -7,14 +7,12 @@ public class p141 {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in); 
-		String line = sc.nextLine();
+		Scanner sc = new Scanner(System.in);
 		
-		while (line != null) {
-			//Stack<Character> simbols = new Stack<Character>();
+		while (sc.hasNext()) {
+			Stack<Character> simbols = new Stack<Character>();
 			//push(); pop(); peek();
 			
-			line = sc.nextLine();
 		}
 		sc.close();
 	}

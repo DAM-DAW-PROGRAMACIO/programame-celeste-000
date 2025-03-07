@@ -2,18 +2,17 @@ package Easy;
 
 import java.util.Scanner;
 
-public class plantillaScanner {
+public class p105 {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in); 
-		String line = sc.nextLine();
+		double num = sc.nextDouble();
 		
-		while (!line.equals("0")) {
+		while (num != -1) {
 			
-			System.out.println("");
 			
-			line = sc.nextLine();
+			num = sc.nextDouble();
 		}
 		sc.close();
 	}

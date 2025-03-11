@@ -28,7 +28,7 @@ public class p347 {
 					int aux2 = Math.min(major, menor);
 					
 					major = aux;
-					menor = aux2;
+					menor = aux2; 
 				}
 				System.out.println(pajaritas);
 			}

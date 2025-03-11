@@ -38,7 +38,7 @@ public class p154 {
 					}
 					else {
 						car2 = lletresPossibles.charAt(0);
-						car3 = lletresPossibles.charAt(index1 + 3);
+						car1 = lletresPossibles.charAt(index1 + 1);
 						System.out.println(String.format("%04d", num) + " " + car1 + car2 + car3);
 					}
 				}

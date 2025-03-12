@@ -24,9 +24,9 @@ public class p633 {
 				if (!noRepetits.add(animal))
 					repetits++;
 				else {
-					if (animal.substring(animal.length() - 1).equals("o"))
+					if (animal.endsWith("o"))
 						machos.add(animal);
-					else if (animal.substring(animal.length() - 1).equals("a"))
+					else if (animal.endsWith("a"))
 						hembras.add(animal);
 				}
 				for (String nom : machos) {

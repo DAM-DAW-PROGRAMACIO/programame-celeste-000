@@ -2,7 +2,7 @@ package Easy;
 
 import java.util.Scanner;
 
-public class pF {
+public class p680 {
 
 	public static void main(String[] args) throws Exception{
 		

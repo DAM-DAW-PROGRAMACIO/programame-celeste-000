@@ -15,8 +15,16 @@ public class p241 {
 			line = br.readLine();
 			int hojas = Integer.parseInt(line);
 			
-			if (hojas <= 5) {
+			if (hojas == 0 || hojas == 1 || hojas == 2 || hojas == 5) {
 				System.out.println("IMPOSIBLE");
+			}
+			else {
+				if (hojas % 3 == 0)
+					System.out.println("0");
+				else if (hojas % 3 == 1)
+					System.out.println("1");
+				else if (hojas % 3 == 2)
+					System.out.println("2");
 			}
 		}
 	}
